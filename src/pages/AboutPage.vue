@@ -1,28 +1,32 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page class="q-pa-md bg-dark">
     <!-- 使用 Quasar 的動畫組件 -->
     <q-slide-transition appear>
-      <div class="text-h3 q-mb-md text-center">關於我</div>
+      <div class="text-h3 q-mb-md text-center text-white">關於我</div>
     </q-slide-transition>
 
     <div class="row justify-center">
       <!-- 個人簡介卡片 -->
       <div class="col-12 col-md-10 col-lg-8">
         <q-slide-transition appear>
-          <q-card class="q-pa-xl">
-            <div class="text-h6 q-mb-md"><q-icon name="person" class="q-mr-sm" />個人簡介</div>
+          <q-card class="q-pa-xl bg-dark text-white">
+            <div class="text-h6 q-mb-md text-primary"><q-icon name="person" class="q-mr-sm" />個人簡介</div>
             <p class="text-body1">
               財務領域出身，目前是一名全端工程師，熱愛學習新技術，並且喜歡解決複雜的技術問題。
             </p>
-            <div class="text-h6 q-mt-lg q-mb-md">
+            <div class="text-h6 q-mt-lg q-mb-md text-primary">
               <q-icon name="work" class="q-mr-sm" />工作經驗
             </div>
-            <q-timeline color="primary">
-              <q-timeline-entry v-for="exp in experience" :key="exp.year">
+            <q-timeline>
+              <q-timeline-entry
+                v-for="exp in experience"
+                :key="exp.year"
+                class="custom-timeline-entry"
+              >
                 <template v-slot:title>
-                  <div class="text-h6">{{ exp.position }}</div>
-                  <div class="text-subtitle1 q-mt-sm">{{ exp.company }}</div>
-                  <div class="text-caption text-grey">{{ exp.year }}</div>
+                  <div class="text-h6 text-white">{{ exp.position }}</div>
+                  <div class="text-subtitle1 q-mt-sm text-primary">{{ exp.company }}</div>
+                  <div class="text-caption text-grey-5">{{ exp.year }}</div>
                 </template>
                 <template v-slot:default>
                   <div class="text-body1 q-my-md">
@@ -35,8 +39,8 @@
                       v-for="skill in exp.skills"
                       :key="skill"
                       class="skill-chip"
-                      color="grey-3"
-                      text-color="grey-8"
+                      color="primary"
+                      text-color="white"
                       size="md"
                     >
                       {{ skill }}
@@ -191,7 +195,69 @@ const experience = [
 }
 
 .skill-chip:hover {
-  background: var(--q-grey-2);
-  transition: background 0.3s ease;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+/* 重新設計時間線樣式 */
+:deep(.custom-timeline-entry) {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 32px;
+}
+
+:deep(.custom-timeline-entry::before) {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: -32px; /* 延伸到下一個項目 */
+  width: 2px;
+  background: #00ff9d;
+}
+
+:deep(.custom-timeline-entry::after) {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ff9d;
+}
+
+/* 最後一個項目不需要延伸線條 */
+:deep(.custom-timeline-entry:last-child::before) {
+  display: none;
+}
+
+/* 移除 Quasar 原有的時間線樣式 */
+:deep(.q-timeline__line),
+:deep(.q-timeline__dot),
+:deep(.q-timeline__subtitle:before),
+:deep(.q-timeline__subtitle:after) {
+  display: none;
+}
+
+/* 調整內容區塊的位置 */
+:deep(.q-timeline__content) {
+  padding-left: 32px;
+}
+
+/* 調整技能標籤的顏色 */
+:deep(.q-chip.skill-chip) {
+  background: #00ff9d !important;
+  color: #000 !important;
+}
+
+/* 調整標題文字顏色 */
+.text-primary {
+  color: #00ff9d !important;
+}
+
+/* 確保卡片內容在暗色背景下清晰可見 */
+:deep(.q-card) {
+  box-shadow: 0 1px 5px rgba(0, 255, 157, 0.2);
 }
 </style>
