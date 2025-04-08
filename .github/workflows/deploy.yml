@@ -5,6 +5,9 @@ on:
     branches:
       - main  # 或是你的主分支名稱
 
+permissions:
+  contents: write  # 添加這個權限設置
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
