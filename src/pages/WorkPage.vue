@@ -46,19 +46,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-// 添加基礎路徑計算
-const publicPath = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
-
 const projects = [
   {
     title: '調和永續官方網站',
     description:
       '調和永續官方網站，客製化後台系統，使用 Vue.js 開發，採用 Tailwind.css、Qausar 進行樣式設計。',
-    images: [
-      `${publicPath}images/project1.png`,
-      `${publicPath}images/project2.png`,
-      `${publicPath}images/project3.png`,
-    ],
+    images: ['./images/project1.png', './images/project2.png', './images/project3.png'],
     technologies: ['Vue.js', 'Tailwind.css', 'Qausar', 'TypeScript'],
     demoLink: 'http://35.229.157.232:30082/',
     githubLink: '#',
@@ -67,7 +60,7 @@ const projects = [
   {
     title: 'Tourbobo',
     description: 'Tourbobo 是一個提供訂房資訊的網站，前端使用 Vue.js 開發，後端使用 Laravel 開發。',
-    images: [`${publicPath}images/tourbobo1.png`, `${publicPath}images/tourbobo2.png`],
+    images: ['./images/tourbobo1.png', './images/tourbobo2.png'],
     technologies: ['Vue.js', 'Laravel', 'Tailwind.css', 'TypeScript'],
     demoLink: 'https://travel.tourbobo.com/home',
     githubLink: '#',
@@ -77,12 +70,7 @@ const projects = [
     title: '酒吧地圖APP',
     description:
       '酒吧地圖APP主要是設計給熱愛喝酒的人，可以快速查看附近的酒吧，及收集踩點過的酒吧，使用 Flutter 開發設計，目前尚在Beta測試階段。',
-    images: [
-      `${publicPath}images/bar1.png`,
-      `${publicPath}images/bar2.png`,
-      `${publicPath}images/bar3.png`,
-      `${publicPath}images/bar4.png`,
-    ],
+    images: ['./images/bar1.png', './images/bar2.png', './images/bar3.png', './images/bar4.png'],
     technologies: ['Flutter', 'Google Sheet API', 'Google Map API', 'Firebase Auth'],
     demoLink: '#',
     githubLink: '#',
