@@ -3,7 +3,7 @@ export default function (/* ctx */) {
     css: ['app.css'],
     build: {
       // 移除 vitePlugins 配置
-      publicPath: '/porfolio/',  // 注意結尾的斜線很重要
+      publicPath: '/portfolio/',  // 修正拼寫，改為 portfolio
     },
     framework: {
       iconSet: 'material-icons',
