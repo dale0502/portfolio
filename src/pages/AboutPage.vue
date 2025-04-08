@@ -10,7 +10,9 @@
       <div class="col-12 col-md-10 col-lg-8">
         <q-slide-transition appear>
           <q-card class="q-pa-xl bg-dark text-white">
-            <div class="text-h6 q-mb-md text-primary"><q-icon name="person" class="q-mr-sm" />個人簡介</div>
+            <div class="text-h6 q-mb-md text-primary">
+              <q-icon name="person" class="q-mr-sm" />個人簡介
+            </div>
             <p class="text-body1">
               財務領域出身，目前是一名全端工程師，熱愛學習新技術，並且喜歡解決複雜的技術問題。
             </p>

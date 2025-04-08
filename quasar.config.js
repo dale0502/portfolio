@@ -3,9 +3,13 @@ export default function (/* ctx */) {
     css: ['app.css'],
     build: {
       // 移除 vitePlugins 配置
+      publicPath: '/portfolio',  // 例如: '/portfolio/'
     },
     framework: {
       iconSet: 'material-icons',
+      plugins: [
+        'Notify'
+      ]
     },
     extras: ['material-icons'],
     boot: [

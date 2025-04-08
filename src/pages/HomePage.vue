@@ -54,17 +54,17 @@ const skillCategories = [
   {
     name: '前端開發',
     icon: 'code',
-    skills: ['Vue.js', 'Tailwind CSS', 'TypeScript'],
+    skills: ['Vue.js', 'Tailwind CSS', 'TypeScript', 'Quasar', 'Flutter'],
   },
   {
     name: '後端開發',
     icon: 'storage',
-    skills: ['Node.js', 'Express', 'MariaDB', 'RESTful API'],
+    skills: ['Node.js', 'Laravel', 'Python', 'MariaDB', 'MySQL', 'Redis', 'RabbitMQ', 'Golang'],
   },
   {
     name: '開發工具/平台',
     icon: 'build',
-    skills: ['Git', 'Docker', 'Linux', 'AWS'],
+    skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'GCP'],
   },
 ];
 </script>

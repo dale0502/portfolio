@@ -58,6 +58,16 @@ const projects = [
     isApp: false,
   },
   {
+    title: 'Tourbobo',
+    description:
+      'Tourbobo 是一個提供訂房資訊的網站，前端使用 Vue.js 開發，後端使用 Laravel 開發。',
+    images: ['/images/tourbobo1.png', '/images/tourbobo2.png'],
+    technologies: ['Vue.js', 'Laravel', 'Tailwind.css', 'TypeScript'],
+    demoLink: 'https://travel.tourbobo.com/home',
+    githubLink: '#',
+    isApp: false,
+  },
+  {
     title: '酒吧地圖APP',
     description:
       '酒吧地圖APP主要是設計給熱愛喝酒的人，可以快速查看附近的酒吧，及收集踩點過的酒吧，使用 Flutter 開發設計，目前尚在Beta測試階段。',
@@ -66,7 +76,7 @@ const projects = [
     demoLink: '#',
     githubLink: '#',
     isApp: true,
-  },
+  }
 ];
 
 // 為每個專案創建一個當前圖片索引
